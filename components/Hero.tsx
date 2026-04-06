@@ -10,30 +10,27 @@ export default function Hero() {
         {/* Badge */}
         <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-stone-200 bg-white px-4 py-1.5 text-xs font-medium text-stone-600 shadow-sm">
           <span className="inline-block h-2 w-2 rounded-full bg-green-500" />
-          Notion Template Creator
+          Free Notion Templates
         </div>
 
         {/* Main heading */}
-        <h1 className="mx-auto max-w-3xl text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl md:text-6xl">
-          Beautiful Notion templates for your{" "}
+        <h1 className="mx-auto max-w-4xl text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl md:text-6xl">
+          3 free Notion templates to{" "}
           <span className="bg-gradient-to-r from-stone-600 to-stone-900 bg-clip-text text-transparent">
-            life &amp; work
+            organize your life
           </span>
         </h1>
 
         {/* Subheading */}
         <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-stone-500">
-          Thoughtfully designed templates to help you organize, plan, and
-          create&mdash;all inside Notion. Free and premium options available.
+          Track your finances, manage projects, and build better habits&mdash;all
+          inside Notion. Enter your email below and get instant access.
         </p>
 
-        {/* CTA buttons */}
-        <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <a href="#free-templates" className="btn-primary px-8 py-3.5">
-            Browse Free Templates
-          </a>
-          <a href="#paid-templates" className="btn-secondary px-8 py-3.5">
-            View Premium Collection
+        {/* CTA button */}
+        <div className="mt-10">
+          <a href="#get-templates" className="btn-primary px-10 py-4 text-base">
+            Get Free Templates →
           </a>
         </div>
 

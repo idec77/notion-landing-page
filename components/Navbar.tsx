@@ -9,8 +9,7 @@ export default function Navbar() {
     <nav className="fixed top-0 z-50 w-full border-b border-stone-200/60 bg-stone-50/80 backdrop-blur-lg">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <a href="#" className="text-xl font-bold tracking-tight">
-          {/* Replace with your name or logo */}
-          YourName<span className="text-stone-400">.</span>
+          IDEC<span className="text-stone-400">.</span>
         </a>
 
         {/* Desktop nav */}
@@ -19,22 +18,16 @@ export default function Navbar() {
             href="#free-templates"
             className="text-sm font-medium text-stone-600 transition-colors hover:text-stone-900"
           >
-            Free Templates
+            Templates
           </a>
           <a
-            href="#paid-templates"
+            href="#get-templates"
             className="text-sm font-medium text-stone-600 transition-colors hover:text-stone-900"
           >
-            Premium Templates
+            Get Free Access
           </a>
-          <a
-            href="#newsletter"
-            className="text-sm font-medium text-stone-600 transition-colors hover:text-stone-900"
-          >
-            Newsletter
-          </a>
-          <a href="#newsletter" className="btn-primary text-xs">
-            Subscribe
+          <a href="#get-templates" className="btn-primary text-xs">
+            Get Templates
           </a>
         </div>
 
@@ -77,24 +70,17 @@ export default function Navbar() {
               onClick={() => setMobileMenuOpen(false)}
               className="text-sm font-medium text-stone-600"
             >
-              Free Templates
+              Templates
             </a>
             <a
-              href="#paid-templates"
+              href="#get-templates"
               onClick={() => setMobileMenuOpen(false)}
               className="text-sm font-medium text-stone-600"
             >
-              Premium Templates
+              Get Free Access
             </a>
-            <a
-              href="#newsletter"
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-sm font-medium text-stone-600"
-            >
-              Newsletter
-            </a>
-            <a href="#newsletter" className="btn-primary mt-2 text-center text-xs">
-              Subscribe
+            <a href="#get-templates" className="btn-primary mt-2 text-center text-xs">
+              Get Templates
             </a>
           </div>
         </div>

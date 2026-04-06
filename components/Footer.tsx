@@ -6,7 +6,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <a href="#" className="text-lg font-bold tracking-tight">
-              YourName<span className="text-stone-400">.</span>
+              IDEC<span className="text-stone-400">.</span>
             </a>
             <p className="mt-1 text-sm text-stone-500">
               Notion templates for your best life.
