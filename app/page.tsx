@@ -1,7 +1,8 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import FreeTemplates from "@/components/FreeTemplates";
-import LeadForm from "@/components/LeadForm";
+import PaidTemplates from "@/components/PaidTemplates";
+import Newsletter from "@/components/Newsletter";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -11,7 +12,8 @@ export default function Home() {
       <main>
         <Hero />
         <FreeTemplates />
-        <LeadForm />
+        <PaidTemplates />
+        <Newsletter />
       </main>
       <Footer />
     </>

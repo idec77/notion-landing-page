@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "IDEC | Free Notion Templates",
+  title: "IDEC | Notion Template Creator",
   description:
-    "Get 3 free Notion templates: Finance Tracker, Project Management, and Habit Tracker. Organize your life today.",
+    "Beautiful, functional Notion templates to streamline your life and work. Free and premium templates available.",
 };
 
 export default function RootLayout({
