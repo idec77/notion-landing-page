@@ -13,21 +13,21 @@ const templates = [
   {
     title: "Finance Tracker",
     description:
-      "This is the version 2 of the free Finance Tracker template. Track your income and expenses, manage account balances, monitor active subscriptions, and generate budgeting reports — all in one place.",
+      "Track your income and expenses, manage account balances, monitor active subscriptions, and generate budgeting reports — all in one place.",
     category: "Finance",
     image: "/finance-tracker.png",
   },
   {
     title: "Project Management",
     description:
-      "This is the version 2 of the free Project Management template. Track project progression, manage weekly tasks, organize documents and resources, and monitor overdue tasks to keep everything on schedule.",
+      "Track project progression, manage weekly tasks, organize documents and resources, and monitor overdue tasks to keep everything on schedule.",
     category: "Productivity",
     image: "/project-management.png",
   },
   {
     title: "Habit Tracker",
     description:
-      "This is the version 2 of the free Habit Tracker template. Build better routines with daily habit check-ins, weekly progress tracking, and visual streaks to keep you motivated and consistent.",
+      "Build better routines with daily habit check-ins, weekly progress tracking, and visual streaks to keep you motivated and consistent.",
     category: "Personal",
     image: "/habit-tracker.png",
   },
