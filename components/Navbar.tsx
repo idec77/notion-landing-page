@@ -32,8 +32,8 @@ export default function Navbar() {
           >
             Newsletter
           </a>
-          <a href="/free-templates" className="btn-primary text-xs">
-            Get Free Templates
+          <a href="/#newsletter" className="btn-primary text-xs">
+            Subscribe
           </a>
         </div>
 
@@ -92,8 +92,8 @@ export default function Navbar() {
             >
               Newsletter
             </a>
-            <a href="/free-templates" className="btn-primary mt-2 text-center text-xs">
-              Get Free Templates
+            <a href="/#newsletter" className="btn-primary mt-2 text-center text-xs">
+              Subscribe
             </a>
           </div>
         </div>
