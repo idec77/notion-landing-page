@@ -2,11 +2,7 @@
 
 import { useState, FormEvent } from "react";
 
-// MailerLite API integration
-// To connect: Replace the GROUP_ID and API_KEY below, or use a MailerLite embedded form/webhook URL
-const MAILERLITE_API_URL = "https://connect.mailerlite.com/api/subscribers";
-const MAILERLITE_API_KEY = ""; // Add your MailerLite API key here
-const MAILERLITE_GROUP_ID = ""; // Add your MailerLite group ID here
+// MailerLite integration via server-side API route (/api/subscribe)
 
 export default function LeadForm() {
   const [name, setName] = useState("");
@@ -19,23 +15,12 @@ export default function LeadForm() {
     setLoading(true);
 
     try {
-      // MailerLite API integration
-      if (MAILERLITE_API_KEY) {
-        await fetch(MAILERLITE_API_URL, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${MAILERLITE_API_KEY}`,
-          },
-          body: JSON.stringify({
-            email,
-            fields: { name },
-            groups: MAILERLITE_GROUP_ID ? [MAILERLITE_GROUP_ID] : [],
-          }),
-        });
-      }
+      await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email }),
+      });
     } catch (error) {
-      // Still show success to the user even if API call fails
       console.error("Subscription error:", error);
     }
 
