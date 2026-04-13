@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
-import TemplateMockup from "@/components/TemplateMockup";
 import LeadForm from "@/components/LeadForm";
 import Footer from "@/components/Footer";
 
@@ -14,23 +13,23 @@ const templates = [
   {
     title: "Finance Tracker",
     description:
-      "Track income, expenses, and savings in one place. Visual breakdowns help you understand where your money goes.",
+      "This is the version 2 of the free Finance Tracker template. Track your income and expenses, manage account balances, monitor active subscriptions, and generate budgeting reports — all in one place.",
     category: "Finance",
-    type: "finance" as const,
+    image: "/finance-tracker.png",
   },
   {
     title: "Project Management",
     description:
-      "Kanban boards, progress tracking, and task management. Stay on top of every project from start to finish.",
+      "This is the version 2 of the free Project Management template. Track project progression, manage weekly tasks, organize documents and resources, and monitor overdue tasks to keep everything on schedule.",
     category: "Productivity",
-    type: "project" as const,
+    image: "/project-management.png",
   },
   {
     title: "Habit Tracker",
     description:
-      "Build lasting habits with daily check-ins, streak tracking, and weekly overviews to stay motivated.",
+      "This is the version 2 of the free Habit Tracker template. Build better routines with daily habit check-ins, weekly progress tracking, and visual streaks to keep you motivated and consistent.",
     category: "Personal",
-    type: "habit" as const,
+    image: "/habit-tracker.png",
   },
 ];
 
@@ -88,7 +87,16 @@ export default function FreeTemplatesPage() {
             <div className="mt-14 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
               {templates.map((template) => (
                 <div key={template.title} className="template-card group">
-                  <TemplateMockup type={template.type} />
+                  {/* Template image */}
+                  <div className="overflow-hidden">
+                    <img
+                      src={template.image}
+                      alt={template.title}
+                      className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                  </div>
+
+                  {/* Card content */}
                   <div className="p-5">
                     <div className="mb-2 flex items-center justify-between">
                       <span className="rounded-full bg-stone-100 px-3 py-1 text-xs font-medium text-stone-600">
