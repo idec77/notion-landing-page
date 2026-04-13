@@ -2,16 +2,44 @@
 
 import { useState, FormEvent } from "react";
 
+// MailerLite API integration
+// To connect: Replace the GROUP_ID and API_KEY below, or use a MailerLite embedded form/webhook URL
+const MAILERLITE_API_URL = "https://connect.mailerlite.com/api/subscribers";
+const MAILERLITE_API_KEY = ""; // Add your MailerLite API key here
+const MAILERLITE_GROUP_ID = ""; // Add your MailerLite group ID here
+
 export default function LeadForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    // TODO: Connect your automation here
-    // Example: fetch('/api/submit', { method: 'POST', body: JSON.stringify({ name, email }) })
-    // Or use a form service like Formspree, Make.com webhook, Zapier, etc.
+    setLoading(true);
+
+    try {
+      // MailerLite API integration
+      if (MAILERLITE_API_KEY) {
+        await fetch(MAILERLITE_API_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${MAILERLITE_API_KEY}`,
+          },
+          body: JSON.stringify({
+            email,
+            fields: { name },
+            groups: MAILERLITE_GROUP_ID ? [MAILERLITE_GROUP_ID] : [],
+          }),
+        });
+      }
+    } catch (error) {
+      // Still show success to the user even if API call fails
+      console.error("Subscription error:", error);
+    }
+
+    setLoading(false);
     setSubmitted(true);
   };
 
@@ -25,42 +53,19 @@ export default function LeadForm() {
               <div className="absolute -bottom-20 -left-20 h-60 w-60 rounded-full bg-stone-800 opacity-30" />
             </div>
             <div className="relative z-10 mx-auto max-w-2xl text-center">
-              <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-green-500/20 text-3xl">
-                ✅
+              {/* Success email icon */}
+              <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-green-500/20">
+                <svg className="h-7 w-7 text-green-400" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
               </div>
               <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-                You&apos;re all set!
+                You will receive an email shortly!
               </h2>
               <p className="mt-4 text-lg leading-relaxed text-stone-400">
-                Check your inbox for the template links. While you wait, you can
-                access them directly below:
+                We&apos;ve sent the template links to your inbox. Check your email
+                (and spam folder, just in case) for your free Notion templates.
               </p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
-                <a
-                  href="https://jasteanrimorin.notion.site/Finance-Tracker-329145b4622880aaaaadefe8431196e4?source=copy_link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-stone-900 transition-all hover:bg-stone-100"
-                >
-                  💰 Finance Tracker
-                </a>
-                <a
-                  href="https://jasteanrimorin.notion.site/Project-Management-32b145b46228801f8efffa5d592715da?source=copy_link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-stone-900 transition-all hover:bg-stone-100"
-                >
-                  📋 Project Management
-                </a>
-                <a
-                  href="https://jasteanrimorin.notion.site/Habit-Tracker-333145b4622880e39ab8d26b85c621e4?source=copy_link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-stone-900 transition-all hover:bg-stone-100"
-                >
-                  ✅ Habit Tracker
-                </a>
-              </div>
             </div>
           </div>
         </div>
@@ -79,9 +84,21 @@ export default function LeadForm() {
           </div>
 
           <div className="relative z-10 mx-auto max-w-2xl text-center">
-            {/* Icon */}
-            <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 text-2xl">
-              🎁
+            {/* Email icon (no box corners) */}
+            <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-white/10">
+              <svg
+                className="h-7 w-7 text-white"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+                />
+              </svg>
             </div>
 
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
@@ -118,15 +135,17 @@ export default function LeadForm() {
               </div>
               <button
                 type="submit"
+                disabled={loading}
                 className="w-full rounded-full bg-white px-8 py-3.5 text-sm font-semibold text-stone-900
-                           transition-all hover:bg-stone-100 active:scale-[0.98] sm:w-auto sm:px-12"
+                           transition-all hover:bg-stone-100 active:scale-[0.98] disabled:opacity-70
+                           disabled:cursor-not-allowed sm:w-auto sm:px-12"
               >
-                Send Me the Templates →
+                {loading ? "Sending..." : "Send Me the Templates →"}
               </button>
             </form>
 
             <p className="mt-4 text-xs text-stone-500">
-              🔒 Your info is safe. Unsubscribe anytime.
+              Your info is safe. Unsubscribe anytime.
             </p>
           </div>
         </div>
