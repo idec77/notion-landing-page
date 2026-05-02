@@ -21,18 +21,6 @@ export default function Footer() {
             >
               Free
             </a>
-            <a
-              href="#paid-templates"
-              className="text-sm text-stone-500 transition-colors hover:text-stone-900"
-            >
-              Premium
-            </a>
-            <a
-              href="#newsletter"
-              className="text-sm text-stone-500 transition-colors hover:text-stone-900"
-            >
-              Newsletter
-            </a>
           </div>
 
           {/* Social links */}
