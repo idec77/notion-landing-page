@@ -24,7 +24,7 @@ export default function Hero() {
         {/* Subheading */}
         <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-stone-500">
           Thoughtfully designed templates to help you organize, plan, and
-          create&mdash;all inside Notion. Free and premium options available.
+          create&mdash;all inside Notion.
         </p>
 
         {/* CTA buttons */}
@@ -32,25 +32,6 @@ export default function Hero() {
           <a href="/free-templates" className="btn-primary px-8 py-3.5">
             Get Free Templates
           </a>
-          <a href="#paid-templates" className="btn-secondary px-8 py-3.5">
-            View Premium Collection
-          </a>
-        </div>
-
-        {/* Social proof */}
-        <div className="mt-16 flex flex-col items-center gap-4">
-          <div className="flex -space-x-2">
-            {[1, 2, 3, 4, 5].map((i) => (
-              <div
-                key={i}
-                className="h-8 w-8 rounded-full border-2 border-white bg-stone-200"
-              />
-            ))}
-          </div>
-          <p className="text-sm text-stone-500">
-            Trusted by <span className="font-semibold text-stone-700">2,000+</span>{" "}
-            Notion users
-          </p>
         </div>
       </div>
     </section>
