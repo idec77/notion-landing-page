@@ -20,18 +20,6 @@ export default function Navbar() {
           >
             Free Templates
           </a>
-          <a
-            href="/#paid-templates"
-            className="text-sm font-medium text-stone-600 transition-colors hover:text-stone-900"
-          >
-            Premium Templates
-          </a>
-          <a
-            href="/#newsletter"
-            className="text-sm font-medium text-stone-600 transition-colors hover:text-stone-900"
-          >
-            Newsletter
-          </a>
           <a href="/#newsletter" className="btn-primary text-xs">
             Subscribe
           </a>
@@ -77,20 +65,6 @@ export default function Navbar() {
               className="text-sm font-medium text-stone-600"
             >
               Free Templates
-            </a>
-            <a
-              href="/#paid-templates"
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-sm font-medium text-stone-600"
-            >
-              Premium Templates
-            </a>
-            <a
-              href="/#newsletter"
-              onClick={() => setMobileMenuOpen(false)}
-              className="text-sm font-medium text-stone-600"
-            >
-              Newsletter
             </a>
             <a href="/#newsletter" className="btn-primary mt-2 text-center text-xs">
               Subscribe
