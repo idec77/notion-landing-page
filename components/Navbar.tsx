@@ -8,8 +8,13 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 z-50 w-full border-b border-stone-200/60 bg-stone-50/80 backdrop-blur-lg">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a href="/" className="text-xl font-bold tracking-tight">
-          IDEC<span className="text-stone-400">.</span>
+        <a href="/" className="flex items-center gap-2 text-xl font-bold tracking-tight">
+          <img
+            src="/idec-logo.png"
+            alt="IDEC logo"
+            className="h-8 w-8 rounded-full object-cover"
+          />
+          IDEC
         </a>
 
         {/* Desktop nav */}

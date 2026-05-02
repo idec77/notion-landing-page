@@ -5,8 +5,13 @@ export default function Footer() {
         <div className="flex flex-col items-center justify-between gap-8 sm:flex-row">
           {/* Brand */}
           <div>
-            <a href="#" className="text-lg font-bold tracking-tight">
-              IDEC<span className="text-stone-400">.</span>
+            <a href="#" className="flex items-center gap-2 text-lg font-bold tracking-tight">
+              <img
+                src="/idec-logo.png"
+                alt="IDEC logo"
+                className="h-7 w-7 rounded-full object-cover"
+              />
+              IDEC
             </a>
             <p className="mt-1 text-sm text-stone-500">
               Notion templates for your best life.
